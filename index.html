@@ -11,8 +11,18 @@
   <body>
     <img src="./assets/fav-icon.svg" class="fav-icon" />
     <header><h1>My 1000 Application</h1></header>
-    <button onclick="addTodoItem()">Add Item</button>
+    <form class="form-todo" onsubmit="onFormSubmit(); return false">
+      <span>
+        <input name="todo-title" value="Todo title" placeholder="Set a title" />
+        <input
+          name="todo-text"
+          value="Something we should do"
+          placeholder="Set a text"
+        />
+      </span>
+      <input type="submit" value="Add Item" />
+    </form>
 
-    <div id="todo-container">Empty todo-container</div>
+    <div id="todo-container"></div>
   </body>
 </html>
