@@ -155,3 +155,7 @@ input[type="submit"]:hover {
 .card-color-3 {
   background-color: var(--theme-card-level-3-color);
 }
+
+.todo-checked {
+  background-color: var(--theme-input-base-color);
+}
