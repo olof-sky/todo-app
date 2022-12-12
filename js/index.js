@@ -1,7 +1,6 @@
 const baseUrl = "https://api.jsonbin.io/v3/b/";
-const ourTodoUrl = baseUrl + "6396ebd6811f2b20b0862117";
-const masterKey =
-  "$2b$10$0t9d9/qWupIy182JLJJOYONDLCpfRXImnsGkkrUJ6oGniF929oXsi";
+const ourTodoUrl = baseUrl + "";
+const masterKey = "";
 
 const App = {
   listOfTodos: [],
