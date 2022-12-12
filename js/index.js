@@ -1,3 +1,8 @@
+const baseUrl = "https://api.jsonbin.io/v3/b/";
+const ourTodoUrl = baseUrl + "6396ebd6811f2b20b0862117";
+const masterKey =
+  "$2b$10$0t9d9/qWupIy182JLJJOYONDLCpfRXImnsGkkrUJ6oGniF929oXsi";
+
 const App = {
   listOfTodos: [],
   elements: {
@@ -14,10 +19,28 @@ const App = {
       createTodoItem("Handla", "Glömde köpa ost på burk", Date.now() + 3)
     );
   },
-  create: function () {
-    const inputTitle = document.querySelector("input[name='todo-title']");
-    const inputText = document.querySelector("input[name='todo-text']");
-    this.listOfTodos.push(createTodoItem(inputTitle.value, inputText.value));
+  fetchTodos: function () {
+    fetch(ourTodoUrl, {
+      headers: {
+        "X-Master-Key": masterKey,
+      },
+    })
+      .then(function (response) {
+        return response.json();
+      })
+      .then((data) => {
+        data.record.forEach((item) => this.create(item.title, item.text));
+      })
+      .catch(function (err) {
+        console.log("Error: " + err);
+      });
+  },
+  create: function (title, text) {
+    const inputTitle =
+      title || document.querySelector("input[name='todo-title']").value;
+    const inputText =
+      text || document.querySelector("input[name='todo-text']").value;
+    this.listOfTodos.push(createTodoItem(inputTitle, inputText));
     this.render();
   },
   update: function (id) {
@@ -86,6 +109,7 @@ function onFormSubmit() {
 }
 
 App.addInitialTodos();
+App.fetchTodos();
 App.render();
 
 function logApp() {
