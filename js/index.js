@@ -1,11 +1,5 @@
-const baseUrl = "https://api.jsonbin.io/v3/b/";
-const ourTodoUrl = baseUrl + "639adccb15ab31599e1cc516";
-const masterKey =
-  "$2b$10$cxN/hylQoPtUsjGrPqAyi.jH5D32lHBXJrWcOCADNWkzQhnno35Uy";
-
-console.log("BaseUrl:", baseUrl);
-console.log("OurTodoUrl:", ourTodoUrl);
-console.log("MasterKey:", masterKey);
+const ourTodoUrl = EnvConfig.ourTodoUrl;
+const masterKey = EnvConfig.masterKey;
 
 const App = {
   listOfTodos: [],
