@@ -1,3 +1,6 @@
+@import url("https://fonts.googleapis.com/css2?:wght@300&family=Jura&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@300&family=Jura&display=swap");
+
 h1,
 h2,
 h3,
@@ -5,54 +8,118 @@ h4,
 h5,
 h6,
 p {
-  font-size: 100%;
   padding: 0;
   margin: 0;
 }
+h1 {
+  font-size: 3.75rem;
+  color: var(--theme-1-light-text-color);
+  font-family: "Jura", sans-serif;
+  font-weight: 300;
+}
 :root {
-  --theme-background-color: #2d2d2d;
-  --theme-text-color: #f5f5f5;
-  --theme-header-color: #2a2a2a;
-  --theme-subheader-color: #383838;
-  --theme-primary-color: #383838;
-  --theme-primary-highlight-color: #606060;
-  --theme-action-color: #2e2e2e;
+  --theme-1-background-color: linear-gradient(45deg, #cdecf0, #a0d4ff);
+  --theme-1-header-background-color: linear-gradient(45deg, #98aee7, #589cdb);
+  --theme-1-container-background-color: #eef7ff;
+  --theme-1-light-text-color: #ffffff;
+  --theme-1-dark-text-color: #000000;
+  --theme-subheader-color: #7688e5;
+  --theme-primary-color: #7688e5;
+  --theme-primary-highlight-color: #7688e5;
+  --theme-action-color: #7688e5;
   --theme-dangerous-action-color: #d34e4e;
-  --theme-input-base-color: #3e3e3e;
-  --theme-input-submit-color: #a9cec2;
+  --theme-1-input-base-color: #deefff;
+  --theme-1-input-submit-color: #7688e5;
   --theme-card-level-1-color: rgba(144, 246, 106, 0.5);
   --theme-card-level-2-color: rgba(255, 121, 188, 0.5);
   --theme-card-level-3-color: rgba(87, 210, 255, 0.565);
   --base-border-radius: 0.5rem;
 }
-body {
-  background-color: var(--theme-background-color);
+
+body,
+html {
+  background: var(--theme-1-background-color);
   color: var(--theme-text-color);
   margin: 0;
   padding: 0;
-  font-size: 14px;
+  font-size: 1rem;
+  font-family: "Inter", sans-serif;
+}
+
+main {
+  display: flex;
+  justify-content: center;
+  height: 100%;
+}
+
+.main-container {
+  margin: 80px;
+  padding-bottom: 32px;
+  border-radius: 60px;
+  height: 100%;
+  background-color: var(--theme-1-container-background-color);
+  box-shadow: 0px 4px 4px #aecbe9;
 }
 
 header {
   display: flex;
-  flex-direction: row;
-  background-color: var(--theme-header-color);
-  height: 75px;
+  flex-direction: column;
   align-items: center;
+  justify-content: center;
+  height: 200px;
+  border-top-left-radius: 60px;
+  border-top-right-radius: 60px;
+  background: var(--theme-1-header-background-color);
+}
+
+#logo {
+  width: 44px;
+  height: 44px;
 }
 
 input {
-  background-color: var(--theme-input-base-color);
-  border: none;
+  background-color: var(--theme-1-input-base-color);
+  border: 1px solid #5394d1;
   color: var(--theme-text-color);
-  padding: 0.5rem 1rem;
   border-radius: var(--base-border-radius);
+  font-size: 1rem;
+  height: 46px;
+  width: 100%;
+  padding: 0px 0px 0px 8px;
+}
+
+textarea {
+  background-color: var(--theme-1-input-base-color);
+  border: 1px solid #5394d1;
+  color: var(--theme-text-color);
+  border-radius: var(--base-border-radius);
+  height: 160px;
+  padding: 8px;
+  font-size: 1rem;
+  resize: none;
+}
+
+#title-container {
+  width: 100%;
+}
+
+#color-container {
+  width: 160px;
+}
+
+input[type="color"] {
+  padding: 8px;
+  height: 48px;
 }
 
 input[type="submit"] {
   background-color: var(--theme-action-color);
   color: var(--theme-text-color);
-  transition: all 1s;
+  transition: all 0.5s;
+  font-size: 1.5rem;
+  color: var(--theme-1-light-text-color);
+  font-family: "Jura", sans-serif;
+  font-weight: 300;
 }
 
 input[type="submit"]:hover {
@@ -66,96 +133,99 @@ input[type="submit"]:hover {
   width: 32px;
 }
 
-#todo-container {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 1rem;
+.form-todo {
+  display: flex;
   flex-direction: column;
-  background-color: #1a1a1a;
+  justify-content: space-between;
+  gap: 2rem;
+  padding: 40px 64px 40px 64px;
+  border-radius: var(--base-border-radius);
+}
+
+.form-todo span {
+  display: flex;
+  gap: 1.5rem;
+}
+
+.form-todo div {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.form-todo span > div {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.todo-container {
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  gap: 2rem;
+  padding: 40px 64px 40px 64px;
+  flex-direction: column;
 }
 
 .todo-item {
   display: flex;
   flex-direction: column;
   position: relative;
-  background-color: var(--theme-primary-color);
   border-radius: var(--base-border-radius);
-  padding: 1rem;
+  border: 1px solid #67a1d7;
+  padding: 16px 24px 32px 24px;
   row-gap: 1rem;
-  transition: background-color 0.5s ease;
+  box-shadow: 0px 4px 4px #aecbe9;
+  transition: background-color 0.2s ease;
+}
+
+.todo-item button:hover {
+  opacity: 40%;
+}
+
+.todo-item button {
+  background-color: white;
+}
+
+.todo-item .remove-container button:hover {
+  background-color: #ff0000;
+  border: 1px solid #ff0000;
+}
+
+.todo-item .remove-container button:hover img {
+}
+
+.todo-item.todo-checked .check-container button {
+  background-color: #51ff58;
+  border: 1px solid #208d05;
+}
+
+.todo-item.todo-checked .check-container button img {
+  mix-blend-mode: color-dodge;
 }
 
 .todo-item:hover {
-  background-color: var(--theme-primary-highlight-color);
-}
-
-.todo-item h2 {
-  font-size: 1.5em;
-}
-
-.todo-item p {
-  font-size: 1em;
-  margin-bottom: 2rem;
 }
 
 .todo-item span {
-  position: absolute;
-  top: 1.4rem;
-  right: 1.4rem;
-  font-size: 0.8em;
-}
-
-.todo-item .btn-remove-todo {
-  background: none;
-  border: none;
-  border-radius: 0.2rem;
-  color: var(--theme-text-color);
-  transition: all 1s;
-  padding: 0.5rem 1rem;
-  align-self: flex-end;
-}
-
-.todo-item .btn-remove-todo img {
-  width: 22px;
-  height: 22px;
-  color: white;
-}
-
-.todo-item .btn-remove-todo:hover {
-  /* background-color: var(--theme-dangerous-action-color);*/
-  transform: scale(1.5);
-  filter: invert(100%);
-  cursor: pointer;
-}
-
-.form-todo {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  gap: 0.5rem;
-  padding: 1rem;
-  background-color: var(--theme-subheader-color);
-  margin: 1rem;
-  border-radius: var(--base-border-radius);
+  align-content: center;
 }
 
-.form-todo span {
+.todo-item span div > button {
+  height: 40px;
+  width: 40px;
+  border-radius: 100%;
+  cursor: pointer;
+  border: 1px solid #8db8e1;
+  padding-top: 4px;
+}
+
+.todo-item span div {
   display: flex;
-  gap: 1rem;
-}
-
-.card-color-1 {
-  background-color: var(--theme-card-level-1-color);
-}
-
-.card-color-2 {
-  background-color: var(--theme-card-level-2-color);
-}
-
-.card-color-3 {
-  background-color: var(--theme-card-level-3-color);
-}
-
-.todo-checked {
-  background-color: var(--theme-input-base-color);
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 12px;
 }

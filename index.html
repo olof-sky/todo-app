@@ -9,20 +9,36 @@
     <title>Document</title>
   </head>
   <body>
-    <img src="./assets/fav-icon.svg" class="fav-icon" />
-    <header><h1>My 1000 Application</h1></header>
-    <form class="form-todo" onsubmit="onFormSubmit(); return false">
-      <span>
-        <input name="todo-title" value="Todo title" placeholder="Set a title" />
-        <input
-          name="todo-text"
-          value="Something we should do"
-          placeholder="Set a text"
-        />
-      </span>
-      <input type="submit" value="Add Item" />
-    </form>
-    <button onclick="logApp()">Log Appdata</button>
-    <div id="todo-container"></div>
+    <main>
+      <div class="main-container">
+        <header>
+          <img id="logo" src="./assets/logo.svg" class="fav-icon" />
+          <h1>ToDo's</h1>
+        </header>
+        <form class="form-todo" onsubmit="onFormSubmit(); return false;">
+          <span>
+            <div id="title-container">
+              <label name="title">Add title</label>
+              <input name="todo-title" value="" />
+            </div>
+            <div id="color-container">
+              <label name="title">Choose color</label>
+              <input type="color" list="presetColors" value="#FFFCFF" />
+              <datalist id="presetColors">
+                <option>#FFFCFF</option>
+                <option>#F9FFFD</option>
+                <option>#FFFFFE</option>
+              </datalist>
+            </div>
+          </span>
+          <div>
+            <label name="title">Add description</label>
+            <textarea name="todo-text"></textarea>
+          </div>
+          <input type="submit" value="Add Item" />
+        </form>
+        <div class="todo-container"></div>
+      </div>
+    </main>
   </body>
 </html>
