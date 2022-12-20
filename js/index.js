@@ -1,5 +1,6 @@
 const ourTodoUrl = EnvConfig.ourTodoUrl;
 const masterKey = EnvConfig.masterKey;
+console.log("Application is initiated");
 
 const App = {
   listOfTodos: [],
@@ -17,7 +18,6 @@ const App = {
       })
       .then((response) => {
         let data = response;
-
         console.log("Data:", data.record);
         this.listOfTodos = [];
         data.record.forEach((obj) => {
