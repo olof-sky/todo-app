@@ -22,17 +22,10 @@ h1 {
   --theme-1-header-background-color: linear-gradient(45deg, #98aee7, #589cdb);
   --theme-1-container-background-color: #eef7ff;
   --theme-1-light-text-color: #ffffff;
-  --theme-1-dark-text-color: #000000;
-  --theme-subheader-color: #7688e5;
-  --theme-primary-color: #7688e5;
-  --theme-primary-highlight-color: #7688e5;
-  --theme-action-color: #7688e5;
-  --theme-dangerous-action-color: #d34e4e;
   --theme-1-input-base-color: #deefff;
   --theme-1-input-submit-color: #7688e5;
-  --theme-card-level-1-color: rgba(144, 246, 106, 0.5);
-  --theme-card-level-2-color: rgba(255, 121, 188, 0.5);
-  --theme-card-level-3-color: rgba(87, 210, 255, 0.565);
+  --base-border-color: #5394d1;
+  --light-border-color: #8db8e1;
   --base-border-radius: 0.5rem;
 }
 
@@ -79,7 +72,7 @@ header {
 
 input {
   background-color: var(--theme-1-input-base-color);
-  border: 1px solid #5394d1;
+  border: 1px solid var(--base-border-color);
   color: var(--theme-text-color);
   border-radius: var(--base-border-radius);
   font-size: 1rem;
@@ -90,7 +83,7 @@ input {
 
 textarea {
   background-color: var(--theme-1-input-base-color);
-  border: 1px solid #5394d1;
+  border: 1px solid var(--base-border-color);
   color: var(--theme-text-color);
   border-radius: var(--base-border-radius);
   height: 160px;
@@ -113,7 +106,7 @@ input[type="color"] {
 }
 
 input[type="submit"] {
-  background-color: var(--theme-action-color);
+  background-color: var(--theme-1-input-submit-color);
   color: var(--theme-text-color);
   transition: all 0.5s;
   font-size: 1.5rem;
@@ -175,7 +168,7 @@ input[type="submit"]:hover {
   flex-direction: column;
   position: relative;
   border-radius: var(--base-border-radius);
-  border: 1px solid #67a1d7;
+  border: 1px solid var(--light-border-color);
   padding: 16px 24px 32px 24px;
   row-gap: 1rem;
   box-shadow: 0px 4px 4px #aecbe9;
@@ -222,7 +215,7 @@ input[type="submit"]:hover {
   width: 40px;
   border-radius: 100%;
   cursor: pointer;
-  border: 1px solid #8db8e1;
+  border: 1px solid var(--light-border-color);
   padding-top: 4px;
 }
 
